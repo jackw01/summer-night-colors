@@ -1,0 +1,23 @@
+{
+  "name": "summer-night-colors",
+  "version": "1.0.0",
+  "description": "HCL-based color palette for code editing and terminal use.",
+  "main": "colorgenerator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackw01/summer-night-colors.git"
+  },
+  "author": "jackw01",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jackw01/summer-night-colors/issues"
+  },
+  "homepage": "https://github.com/jackw01/summer-night-colors",
+  "dependencies": {
+    "chroma-js": "^1.3.7",
+    "gm": "^1.23.1"
+  }
+}
