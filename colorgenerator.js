@@ -3,7 +3,7 @@ const fs = require('fs');
 const gm = require('gm');
 
 const h = 274, c = 7; // Master hue, chroma for mono colors
-const minL = 10, maxL = 70; // Mono luminance scale
+const minL = 15, maxL = 80; // Mono luminance scale
 const l = 62; // Master foreground luminance
 
 function map(x, inMin, inMax, outMin, outMax) {
@@ -19,6 +19,9 @@ const colors = [
     {name: 'mono-6', value: [h, c, map(6, 8, 1, minL, maxL)]}, // Mid gray 4
     {name: 'mono-7', value: [h, c, map(7, 8, 1, minL, maxL)]}, // BG - lighter
     {name: 'mono-8', value: [h, c, map(8, 8, 1, minL, maxL)]}, // BG
+    {name: 'mono-x0', value: [h, c, 12]}, // BG
+    {name: 'mono-x1', value: [h, c, 10]}, // BG
+    {name: 'mono-x2', value: [h, c, 7]}, // BG
     {name: 'hue-3',  value: [  7, 63,    l]}, // Magenta
     {name: 'hue-5',  value: [ 25, 56,    l]}, // Red
     {name: 'hue-7',  value: [ 46, 53,    l]}, // Red-orange
@@ -36,7 +39,7 @@ for (var i = 0; i < colors.length; i++) {
     var hsl = chroma.hcl(colors[i].value).hsl(), hex = chroma.hcl(colors[i].value).hex();
     const hslStr = `hsl(${Math.round(hsl[0])}, ${Math.round(hsl[1] * 100)}%, ${Math.round(hsl[2] * 100)}%)`;
     generated += `@${colors[i].name}: ${hslStr};\n`;
-    console.log(`${colors[i].name}:   ${hex}   hcl(${colors[i].value.join(', ')})`);
+    console.log(`${colors[i].name}: ${hex} hcl(${colors[i].value.join(', ')}) ${hslStr}`);
 
     var x = (i % 8) * 160, y = Math.floor(i / 8) * 160;
     image.fill(hex).drawRectangle(x + 40, y + 40, x + 160, y + 160, 20, 20);
