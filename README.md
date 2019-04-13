@@ -35,5 +35,5 @@ hue-1: #00a3d2
 ```
 
 ### Themes
-- Atom: https://github.com/jackw01/summer-night-syntax
-- VS Code: https://github.com/jackw01/summer-night-vscode-theme
+- [Atom](https://atom.io/themes/summer-night-syntax): https://github.com/jackw01/summer-night-syntax
+- [VS Code](https://marketplace.visualstudio.com/items?itemName=jackw01.summer-night-theme): https://github.com/jackw01/summer-night-vscode-theme
